@@ -1,0 +1,22 @@
+ private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        //validar que la tabla no este sin elementos
+        if (tablaUsuarios.getRowCount() > 0) {
+            //controlar que este seleccionado algun elemento
+            if (tablaUsuarios.getSelectedRow() != -1) {
+                //obtengo el id del usuario seleccionado
+                int id_usuario = Integer
+                        .parseInt(String.valueOf(tablaUsuarios.getValueAt(tablaUsuarios.getSelectedRow(), 0)));
+                //llamo al metodo borrar
+                controladora.borrarUsuario(id_usuario);
+
+                //avisar al usuario que se borro satisfactoriamente 
+                mostrarMensaje("Se borro el Usuario correctamente", "info", "Eliminacion Correcta");
+
+                cargarTabla();
+            } else {
+                mostrarMensaje("No selecciono ningún registro", "Error", "Error al borrar");
+            }
+        } else {
+            mostrarMensaje("La tabla esta vacía", "Error", "Error al borrar");
+        }
+    }        

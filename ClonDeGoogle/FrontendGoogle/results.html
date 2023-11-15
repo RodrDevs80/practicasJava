@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="results.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo"><img id="logo-result" src="logo/Google-Logo-Transparent-Images.png" alt=""></div>
+        <div><input id="txtSearch" class="input-result" type="text"></div>
+    </div>
+    <hr>
+    <div id="results">
+        <span class="total-result">Cerca de 1.160.000.000 resultados (0,39 segundos)</span>
+        <div class="result">
+            <h3>Diario Panorama Movil - Diario de Santiago del Estero</h3>
+            <span>Diario Panorama.
+                Toda la informacion de Santiago del Estero, Argentina y el Mundo actualizada. Ultimo Momento.</span>
+        </div>
+        <div class="result">
+            <h3>Diario Panorama Movil - Diario de Santiago del Estero</h3>
+            <span>Diario Panorama.
+                Toda la informacion de Santiago del Estero, Argentina y el Mundo actualizada. Ultimo Momento.</span>
+        </div>
+        <div class="result">
+            <h3>Diario Panorama Movil - Diario de Santiago del Estero</h3>
+            <span>Diario Panorama.
+                Toda la informacion de Santiago del Estero, Argentina y el Mundo actualizada. Ultimo Momento.</span>
+        </div>
+        <div class="result">
+            <h3>Diario Panorama Movil - Diario de Santiago del Estero</h3>
+            <span>Diario Panorama.
+                Toda la informacion de Santiago del Estero, Argentina y el Mundo actualizada. Ultimo Momento.</span>
+        </div>
+        <div class="result">
+            <h3>Diario Panorama Movil - Diario de Santiago del Estero</h3>
+            <span>Diario Panorama.
+                Toda la informacion de Santiago del Estero, Argentina y el Mundo actualizada. Ultimo Momento.</span>
+        </div>
+    </div>
+
+    <script>
+        let aux = document.location.href.split('?query=');
+        let query = aux[1];
+        document.getElementById("txtSearch").value = query;
+
+        fetch("http://localhost:8080/api/search?query=" + query)
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+
+                for (let resultSearch of json) {
+                    console.log(resultSearch);
+                }
+
+            });
+        function getHtmlResultSearch() {
+            let title = 'Diario Panorama Movil - Diario de Santiago del Estero';
+            let description = 'Diario Panorama.Toda la informacion de Santiago del Estero, Argentina y el Mundo actualizada. Ultimo Momento.';
+            return `<div class="result">
+            <h3>${title}</h3>
+            <span>${description}</span>
+        </div>`;
+
+        }
+    </script>
+
+</body>
+
+</html>

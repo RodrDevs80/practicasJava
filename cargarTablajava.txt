@@ -1,0 +1,63 @@
+private void cargarTabla() {
+        //definir el modelo de tabla
+        DefaultTableModel modeloTabla= new DefaultTableModel(){
+        //que fila y columnas no sean editables
+        @Override
+             public boolean isCellEditable(int row,int column){
+             return false;
+             }
+        };
+        //establecemos los nombres de las columnas
+        String titulos[]={"Id","Usuario","Rol"};
+        modeloTabla.setColumnIdentifiers(titulos);
+        //traer de la base de datos la lista de usuarios 
+        List<Usuario> listaDeUsuarios= controladora.traerUsuarios();
+        
+        if(listaDeUsuarios!=null){
+           //recorrer lista de usuarios
+           for(Usuario usuario: listaDeUsuarios){
+             Object[] objeto={usuario.getId(),usuario.getNombreUsuario(),usuario.getUnRol().getNombreRol()};
+             modeloTabla.addRow(objeto);
+           }
+        }
+        
+        tablaUsuarios.setModel(modeloTabla);
+           
+    }
+   
+
+
+
+
+________________________________________________________________________________________________________________________
+ private void cargarTabla() {
+        //definir el modelo de tabla
+        DefaultTableModel tabla = new DefaultTableModel() {
+            //que fila y columnas no sean editables
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        //establecemos los nombres de las columnas
+        String titulos[] = {"Num", "Nombre-Mascota", "Raza", "Alergico", "A-Esp.",
+            "Nombre-Dueño", "Cel-Dueño", "Obser."};
+        tabla.setColumnIdentifiers(titulos);
+
+        //traer datos de la base de datos 
+        List<Mascota> listaDeMascotas = controladora.traerMascotas();
+
+        if (listaDeMascotas != null) {
+            //recorrer lista de usuarios
+            for (Mascota masco : listaDeMascotas) {
+                Object[] objeto = {masco.getMunCliente(), masco.getNombreMascota(), masco.getRaza(),
+                    masco.getAlergico(), masco.getAtencionEspecial(), masco.getDuenio().getNombreDuenio(),
+                    masco.getDuenio().getCelDuenio(), masco.getObservaciones()};
+                
+                tabla.addRow(objeto);
+            }
+            //variable de la interfas grafica
+            tablaMascotas.setModel(tabla);
+        }
+    }
+}

@@ -1,0 +1,56 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/nombreDeLaBaseDeDatos
+spring.datasource.username=root
+spring.datasource.password=Sertec2580$
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+#al principio para crear la DB ver update
+spring.jpa.hibernate.ddlAuto=create 
+
+#crea las entidades de la base de datos y al bajar la apliacacion las borra.
+spring.jpa.hibernate.ddl-auto=create-drop
+
+#JWT
+jwt.secret.key=6b9d9cfce8fb3eca47a31922b57e07c5a3a239c8f0a2bf3f452b8c7fc595f211
+jwt.time.expiration=86400000
+
+#Normal
+spring.datasource.url=jdbc:mysql://localhost:3306/test_spring_boot_rest
+spring.datasource.username=root
+spring.datasource.password=Sertec2580$
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+#crea las entidades en la DB
+spring.jpa.hibernate.ddl-auto=update
+
+#crea las entidades en la DB create,create-drop,validate, update, none
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.datasource.url=jdbc:mysql://localhost:3306/test_escuela
+spring.datasource.username=root
+spring.datasource.password=Sertec2580$
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+
+
+#Importante
+spring.datasource.url=jdbc:mysql://localhost:3306/test_escuela?useSSL=false
+
+La opción `usessl=false` se utiliza para desactivar el uso de conexiones SSL (Secure Sockets Layer) o TLS (Transport Layer Security) en una aplicación 
+o configuración específica. SSL y TLS son protocolos de seguridad utilizados para establecer conexiones cifradas y seguras entre un cliente y un servidor, 
+lo que ayuda a proteger la información transmitida a través de Internet.
+
+Al establecer `usessl=false`, se deshabilita el uso de SSL/TLS y las conexiones se realizan sin cifrado. 
+Esto puede ser útil en algunos casos específicos, aunque generalmente no se recomienda, 
+ya que puede comprometer la seguridad de la comunicación. Al desactivar el cifrado, 
+la información transmitida puede ser potencialmente interceptada o manipulada por terceros, 
+lo que puede ser especialmente problemático cuando se trata de datos sensibles como contraseñas, información personal o transacciones financieras.
+
+En resumen, `usessl=false` se utiliza para deshabilitar el cifrado SSL/TLS en una aplicación o configuración, pero debe usarse con precaución y solo en circunstancias donde la seguridad no sea una preocupación.

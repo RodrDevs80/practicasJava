@@ -1,0 +1,5 @@
+JOptionPane optionPane = new JOptionPane("Se guardó correctamente");
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+            JDialog dialog = optionPane.createDialog("Guardado Exitoso");
+            dialog.setAlwaysOnTop(true);
+            dialog.setVisible(true);

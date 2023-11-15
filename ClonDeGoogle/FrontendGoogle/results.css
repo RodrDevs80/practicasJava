@@ -1,0 +1,34 @@
+/*-----------------------------------result.css------------------------*/
+body {
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  display: flex;
+}
+#logo-result {
+  width: 100px;
+  height: auto;
+  margin-left: 20px;
+}
+.input-result {
+  min-width: 150%;
+  height: 35px;
+  margin: 15px 42px;
+  border-radius: 25px;
+  font-size: large;
+  font-weight: 600;
+  font-family: arial, sans-serif;
+  border-color: #ccc;
+  padding-left: 15px;
+}
+.total-result{
+    font-size: 12px;
+}
+#results{
+    max-width: 600px;
+    margin-left: 160px;
+}
+.result h3{
+    color: #0086f8;
+    margin-bottom: 4px;
+}
